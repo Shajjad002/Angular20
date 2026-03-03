@@ -90,7 +90,11 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "defaultCollection": "@schematics/angular",
     "analytics": "f8f0cb8b-e6aa-46f1-8b79-eb5963185976"
+=======
+    "analytics": false
+>>>>>>> 647f852 (first commit)
   }
 }
