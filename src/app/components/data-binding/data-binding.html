@@ -1,16 +1,21 @@
-<table>
+<table style="width: 100%;">
     <tr>
         <td>{{ courseName }}</td>
+        <td>{{ protectedPrice }}</td>
+        <td>{{ courseName }}</td>
+
     </tr>
-    <!-- <tr>
+    
+    <tr>
         <td>
-            <input [value]="name" placeholder="Enter your name">
+            <input  type="text" value="{{ courseName }}">
         </td>
         <td>
-            <button (click)="greet()">Greet</button>
+            <input [type]="inputType" [max]="maxLength" [minLength]="minCharacters">
         </td>
         <td>
-            <input [(ngModel)]="name" placeholder="Enter your name">
+           <p [class]="myClassName">This is Samplee Para</p>
         </td>
-    </tr> -->
+        
+    </tr>
 </table>
