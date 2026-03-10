@@ -5,17 +5,38 @@
         <td>{{ courseName }}</td>
 
     </tr>
-    
+
     <tr>
         <td>
-            <input  type="text" value="{{ courseName }}">
+            <input type="text" value="{{ courseName }}">
         </td>
         <td>
             <input [type]="inputType" [max]="maxLength" [minLength]="minCharacters">
         </td>
         <td>
-           <p [class]="myClassName">This is Samplee Para</p>
+            <p [class]="myClassName">This is Samplee Para</p>
         </td>
-        
+
     </tr>
+    <tr>
+        <td>
+            <button (click)="showAlert()">Show Message</button>
+        </td>
+        <td>
+            <button (click)="changeCourseName()">Change Course</button>  
+        </td>
+        <td>
+            <select (change)="onCityChange()">
+                <option value="">Dhaka</option>
+                <option value="">Chittagong</option>
+                <option value="">Cox's Bazar</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="courseName">
+        </td>
+    </tr>
+
 </table>
