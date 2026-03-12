@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signal-ex',
@@ -7,17 +7,29 @@ import { Component, signal } from '@angular/core';
   styleUrl: './signal-ex.css',
 })
 export class SignalEx {
-  firstNaeme: string = 'John';
-  productName= 'Laptop';
+  firstName: string = 'John';
+  productName = 'Laptop';
   courseName = signal<string>('Angular');
 
-  courseDuration = signal('3 months');
+  courseDuration = signal('5 months');
+  // courseDetails = signal({
+  //   name: 'Angular',
+  //   duration: this.courseDuration(),
+  // });
 
-  constructor() {   
-    this.firstNaeme = 'Jane';
-    console.log(this.firstNaeme); // Output: Jane
+  courseDetails = computed(() =>
+    this.courseName() + ' - ' + this.courseDuration(),
+  );
 
-    this.courseName.set('React');
+  constructor() {
+    this.firstName = 'Jane';
+    console.log(this.firstName); // Output: Jane
+
+    setTimeout(() => {
+      this.courseName.set('React');
+    }, 5000);
+
+    //this.courseName.set('React');
     console.log(this.courseName()); // Output: React
   }
 }
