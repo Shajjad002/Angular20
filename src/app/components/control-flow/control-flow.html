@@ -3,7 +3,12 @@
     <tr>
         <td>
             @if(isParaVisible===true){
+            <span>Sample</span>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            }
+            @else{
+            <small>Smala Tag</small>
+            <h3>isParaVisiable has False value</h3>
             }
 
         </td>
@@ -12,6 +17,38 @@
         </td>
         <td>
             <button (click)="hidePara()">Hide P</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if(startMonthName==="January"){
+            <span>Start Month Name is January</span>
+            }
+            @else if(startMonthName==="February"){
+            <span>Start Month Name is February</span>
+            }
+            @else if(startMonthName==="March"){
+            <span>Start Month Name is March</span>
+            }
+            @else if(startMonthName==="April"){
+            <span>Start Month Name is April</span>
+            }
+            @else{
+                <span>Wrong Input</span>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="startMonthName" placeholder="Enter Start Month Name">
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for(item of cityList;track $index){
+                    <li>{{item}}</li>
+                }
+            </ul>
         </td>
     </tr>
 </table>
