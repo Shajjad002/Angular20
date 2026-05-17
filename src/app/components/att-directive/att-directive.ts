@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './att-directive.css',
 })
 export class AttDirective {
+
+  row1ClassName=signal<string>('');
+  
+  setBgClass(className: string) {
+    this.row1ClassName.set(className);
+  }
 
 }
