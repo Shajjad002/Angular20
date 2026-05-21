@@ -1,18 +1,26 @@
 <div class="container-fluid">
     <div class="row mb-3">
-        <div class="col-9">
-            <div class="p-3" [ngClass]="row1ClassName()">
-                <h1>My App - {{row1ClassName()}}</h1>
+        <div class="col-6">
+            <div class="p-3" [ngClass]="col1ClassName()">
+                <h1>My App - {{col1ClassName()}}</h1>
                 <p>Welcome to my app!</p>
                 <p>This is a simple example of an Angular component template.</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3" [ngStyle]="{ 'background-color': isCol2Green() ? 'blue' : 'lightgray' }">
+                <h1>My App2 -</h1>
             </div>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-3">
-            <button class="btn btn-success " (click)="setBgClass('bg-success')">Green</button>
-            <button class="btn btn-danger ml-2" (click)="setBgClass('bg-danger')">Red</button>
+        <div class="col-6">
+            <button class="btn btn-success me-3 " (click)="setBgClass('bg-success')">Green</button>
+            <button class="btn btn-danger ms-2" (click)="setBgClass('bg-danger')">Red</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-success " (click)="toggleCol2Color()">Toggle BG Color</button>
         </div>
     </div>
 </div>
