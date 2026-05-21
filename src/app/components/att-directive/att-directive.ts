@@ -1,19 +1,24 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass],
+  imports: [NgClass, NgStyle],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css',
 })
 export class AttDirective {
 
-  row1ClassName=signal<string>('');
+  col1ClassName = signal<string>('');
+  isCol2Green = signal<boolean>(false);
 
   setBgClass(className: string) {
-    this.row1ClassName.set(className);
+    this.col1ClassName.set(className);
+  }
+
+  toggleCol2Color() {
+    this.isCol2Green.update(value => !value);
   }
 
 }
