@@ -23,4 +23,58 @@
             <button class="btn btn-success " (click)="toggleCol2Color()">Toggle BG Color</button>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-3">
+            <h5>First Name: {{firstName}}
+                <br>
+                {{firstName | uppercase}}
+            </h5>
+            <h5>Course Name: {{courseName}}
+                <br>
+                {{courseName | lowercase}}
+            </h5>   
+             
+        </div>
+        
+        <div class="col-3">
+            <h5>First Name: {{firstName}}
+                <br>
+                {{firstName | titlecase}}
+            </h5>
+            <h5>Course Name: {{courseName}}
+                <br>
+                {{courseName | titlecase}}
+            </h5>    
+        </div>
+        <div class="col-3">
+            <h5>Roll Numbers List => {{ rollNoList }}
+                <br>
+                {{ rollNoList | slice:0:3 }}
+                <br>
+                {{ rollNoList | slice:3 }}
+            </h5>
+        </div>
+        <div class="col-3">
+            <h5>Student Object:</h5>
+            <p>Name: {{ studentOdject.name }}</p>
+            <p>Age: {{ studentOdject.age }}</p>
+            <p>Course: {{ studentOdject.course }}</p>
+            <p>City: {{ studentOdject.city }}</p>
+            <p>Country: {{ studentOdject.country }}</p>
+
+            <br>
+            <h5>Student Object (JSON):</h5>
+            <pre>{{ studentOdject | json }}</pre>
+
+            <h5>Current Date: {{ currentDate | date }}
+                <br>
+                {{ currentDate | date:'dd-MM-yy' }}
+                <br>
+                {{ currentDate | date:'dd-MMM-yyyy' }}
+                <br>
+                {{ currentDate | date:'dd-MMMM-yyyy' }}
+            </h5>
+        </div>
+    </div>
+
 </div>
